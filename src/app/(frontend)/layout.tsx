@@ -4,7 +4,7 @@ import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import React from 'react'
-
+import Link from 'next/link'
 import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
@@ -33,10 +33,33 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               preview: isEnabled,
             }}
           />
+<section className="relative flex min-h-screen items-center justify-center bg-black px-6">
+      <div className="mx-auto max-w-4xl text-center">
+        {/* Heading */}
+        <h1 className="text-4xl font-semibold tracking-wide text-white sm:text-5xl md:text-6xl">
+          Chemist
+        </h1>
 
-          <Header />
-          {children}
-          <Footer />
+        {/* Subtitle */}
+        <p className="mt-6 text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl">
+          Connecting top-tier Cosmetic Chemists and Formulators with innovative
+          brands to create exceptional products.
+        </p>
+
+        {/* CTA Button */}
+        <div className="mt-10 flex justify-center">
+          <Link href={'/admin'} >
+          
+          <button className="rounded-xl border border-gray-700 px-8 py-3 text-sm font-medium text-white transition hover:border-gray-500 hover:bg-white/5">
+            Dashboard
+          </button>
+          </Link>
+        </div>
+      </div>
+    </section>
+          {/* <Header /> */}
+          {/* {children} */}
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>
